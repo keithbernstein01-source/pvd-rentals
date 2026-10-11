@@ -148,6 +148,7 @@ input,textarea{font:inherit;color:var(--ink);background:var(--surface);border:1p
 .unit .note{margin-top:1rem;font-size:.85rem;color:var(--muted);font-style:italic}
 .ask{border-top:1px solid var(--line)}
 
+.also{padding-bottom:2rem;font-size:.9rem;color:var(--muted)}
 footer{border-top:1px solid var(--line);color:var(--muted);font-size:.85rem}
 footer .wrap{padding-block:1.5rem;display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;justify-content:space-between}
 
@@ -210,6 +211,8 @@ footer .wrap{padding-block:1.5rem;display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;j
       </form>
     </div>
   </div></section>
+
+  <div class="wrap also"><p>Also in Boston: <a href="#p-26">26 Medfield Street, Apartment 2</a></p></div>
 </main>
 
 <main id="view-prop" hidden><div class="wrap" id="prop"></div></main>
@@ -277,7 +280,7 @@ footer .wrap{padding-block:1.5rem;display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;j
     });
     if(!shown){ hoods.appendChild(el('p','none','No apartments with '+want+' bedroom'+(want>1?'s':'')+' right now.')); }
   }
-  var sizes={}; PROPS.forEach(function(p){ if(p.hidden){ return; } p.units.forEach(function(u){ if(!isNaN(beds(u))){ sizes[beds(u)]=1; } }); });   // hidden properties open only by direct link, e.g. #p-26
+  var sizes={}; PROPS.forEach(function(p){ if(p.hidden){ return; } p.units.forEach(function(u){ if(!isNaN(beds(u))){ sizes[beds(u)]=1; } }); });   // hidden properties get no card, filter or map pin; 26 Medfield is linked from the bottom of the home page
   [0].concat(Object.keys(sizes).map(Number).sort(function(a,b){ return a-b; })).forEach(function(n){
     var b=el('button',null,n?String(n):'Any'); b.type='button'; b.id='beds-'+n;
     b.setAttribute('aria-pressed',n===0?'true':'false'); b.setAttribute('aria-label',n?n+' bedroom'+(n>1?'s':''):'Any number of bedrooms');
