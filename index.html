@@ -412,5 +412,10 @@ footer .wrap{padding-block:1.5rem;display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;j
 })();
 </script>
 
+<script>
+function gcCount(){ if(!window.goatcounter||!window.goatcounter.count){ return; } var h=(location.hash||'#home').slice(1); window.goatcounter.count({path:'/'+(h==='home'?'':h)}); }
+window.addEventListener('hashchange',gcCount);
+</script>
+<script data-goatcounter="https://pvd-rentals.goatcounter.com/count" data-goatcounter-settings='{"no_onload": true}' async src="https://gc.zgo.at/count.js" onload="gcCount()"></script>
 </body>
 </html>
