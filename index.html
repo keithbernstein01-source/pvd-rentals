@@ -437,7 +437,7 @@ footer .wrap{padding-block:1.5rem;display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;j
     var m=document.getElementById('formMsg');
     if(!this.checkValidity()){ m.textContent='Add your name and a valid email so we can reply.'; return; }
     var f=this, body='Name: '+f.name.value+'\nEmail: '+f.email.value+'\nProperty: '+f.property.value+'\n\n'+f.message.value;
-    window.location.href='mailto:info@pvd-rentals.com?subject='+encodeURIComponent('Rental inquiry'+(f.property.value?': '+f.property.value:''))+'&body='+encodeURIComponent(body);
+    window.location.href='mailto:info@pvd-rentals.com?subject='+encodeURIComponent('PVD-Rentals Inquiry- '+(f.property.value||'Rental inquiry'))+'&body='+encodeURIComponent(body);
     m.textContent='Your email app should open with your message ready to send. If it does not, email us at info@pvd-rentals.com.';
   });
 })();
