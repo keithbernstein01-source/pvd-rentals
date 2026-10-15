@@ -310,7 +310,7 @@ footer .wrap{padding-block:1.5rem;display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;j
     var root=document.getElementById('prop'); root.textContent='';
     var head=el('div','prop-head');
     if(p.stack){ var st=el('div','stack'); p.ext.forEach(function(n,i){ var im=el('img'); im.src=src(n); im.alt=(i?'Garden at ':'Outside ')+p.num+' '+p.street; st.appendChild(im); }); head.appendChild(st); head.classList.add('stacked'); }
-    else if(p.ext.length){ head.appendChild(gallery(p.ext,'Outside '+p.num+' '+p.street,{cover:p.ext.length===1&&p.id!=='p-185'})); }
+    else if(p.ext.length){ head.appendChild(gallery(p.ext,'Outside '+p.num+' '+p.street,{cover:p.ext.length===1})); }
     else { head.appendChild(el('div','gal soon','Photos coming soon')); }
     var info=el('div'); var back=el('a','back','← All properties'); back.href=H('#home'); info.appendChild(back);
     info.appendChild(el('div','label',p.hood)); info.appendChild(el('div','num',p.num)); info.appendChild(el('h1',null,p.street)); info.appendChild(el('p',null,p.desc));
