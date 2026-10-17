@@ -343,7 +343,7 @@ footer .wrap{padding-block:1.5rem;display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;j
     });
     var ask=el('section','ask'), sh=el('div','sec-head'); sh.appendChild(el('h2',null,'Ask about '+p.num+' '+p.street.replace(/ (Street|Avenue)$/,''))); ask.appendChild(sh);
     var reach=el('div','reach');
-    [['Phone / text','+1 (617) 413-9248'],['Email','info@pvd-rentals.com']].forEach(function(r){ var d=el('div'); d.appendChild(el('span','label',r[0])); d.appendChild(el('b',null,r[1])); reach.appendChild(d); });
+    [['Call or Txt','+1 (617) 413-9248'],['Email','info@pvd-rentals.com']].forEach(function(r){ var d=el('div'); d.appendChild(el('span','label',r[0])); d.appendChild(el('b',null,r[1])); reach.appendChild(d); });
     var d=el('div'), c=el('a','btn','Send us a message'); c.href=H('#contact'); d.appendChild(c); reach.appendChild(d);
     ask.appendChild(reach); root.appendChild(ask);
     var back2=el('a','back','← All properties'); back2.href=H('#home'); back2.style.margin='2rem 0 2.5rem'; root.appendChild(back2);
